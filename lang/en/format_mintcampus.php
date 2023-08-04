@@ -25,6 +25,7 @@
 
 $string['topic'] = 'Section';
 $string['topic0'] = 'General';
+$string['module'] = 'Module';
 
 // Moodle 2.0 Enhancement - Moodle Tracker MDL-15252, MDL-21693 & MDL-22056 - http://docs.moodle.org/en/Development:Languages.
 $string['sectionname'] = 'Section';

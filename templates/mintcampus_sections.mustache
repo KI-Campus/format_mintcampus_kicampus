@@ -15,7 +15,7 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template format_mintcampus/mintcampus
+    @template format_mintcampus/mintcampus_sections
 
     Displays the mintcampus.
 
@@ -64,46 +64,34 @@
 }}
 
 {{#mintcampussections}}
-<li class="col-sm-4 themintcampus"
-     role="region"
-     aria-labelledby="flexaccordsectionname-{{number}}"
-     aria-describedby="flexaccordsectionsummary-{{number}}"
->
-    <div class="flexaccordsectionwrapper">
-        <a id="flexaccordsection-{{number}}"
-           class="flexaccordicon_link"
+    <li class="col-sm-6 col-md-4 themintcampus"
+        role="region"
+        aria-labelledby="flexaccordsectionname-{{number}}"
+        aria-describedby="flexaccordsectionsummary-{{number}}"
+    >
+        <a class="flexaccordsectionwrapper flexaccordicon_link"
            role="link"
            href="{{#sectionurl}}{{sectionurl}}{{/sectionurl}}{{^sectionurl}}#{{/sectionurl}}"
         >
-        <div class="image_holder">
-            {{#imageuri}}
-                <div class="mintcampus-image card-img-bottom text-center info">
-                    <img src="{{imageuri}}" alt="{{imagealttext}}">
-                    {{#sectioncompletionmarkup}}{{{sectioncompletionmarkup}}}{{/sectioncompletionmarkup}}
-                </div>
-            {{/imageuri}}
-            {{#generatedimageuri}}
-                <div class="mintcampus-generatedimage card-img-bottom text-center info" style="background-image: url('{{generatedimageuri}}');">
-                    {{#sectioncompletionmarkup}}{{{sectioncompletionmarkup}}}{{/sectioncompletionmarkup}}
-                </div>
-            {{/generatedimageuri}}
-        </div>
-        <div id="flexaccordsectionname-{{number}}" class="icon_content">
-            {{{sectionname}}}
-        </div>
-        </a>
-        <div id="flexaccordsectionsummary-{{number}}"
-             class="sectionsummary"
-        >
-            {{{summary}}}
-        </div>
-        {{^sectionurl}}
-            <p class="alert alert-info noforumpost">{{#str}}nosectionactivity,format_mintcampus{{/str}}</p>
-        {{/sectionurl}}
-
             <div class="sctilegraphic">
                 {{{scgraphic}}}
             </div>
-    </div>
-</li>
+            <div id="flexaccordsection-{{number}}"
+                 class="flexaccordicon_title"
+            >
+                <div id="flexaccordsectionname-{{number}}" class="icon_content">
+                    <div class="title-part">{{#str}}module, format_mintcampus{{/str}} {{number}}</div>
+                    <div class="title-part title-part-main">{{{sectionname}}}</div>
+                </div>
+            </div>
+            <div id="flexaccordsectionsummary-{{number}}"
+                 class="sectionsummary"
+            >
+                {{{summary}}}
+            </div>
+            {{^sectionurl}}
+                <p class="alert alert-info noforumpost">{{#str}}nosectionactivity,format_mintcampus{{/str}}</p>
+            {{/sectionurl}}
+        </a>
+    </li>
 {{/mintcampussections}}

@@ -35,15 +35,17 @@
 <div class="path-format-mintcampus">
     <div class="path-format-mintcampus ui raised segment">
         <div>
-            <a class="ui blue ribbon label">{{header}}</a>
+            <h3 class="rating-heading">{{header}}</h3>
             <p>{{title}}</p>
-                {{> format_mintcampus/questionts  }}
+            {{> format_mintcampus/questionts  }}
             <em>{{description}}</em>
             <p></p>
             <div class="ui form">
                 <div class="field">
-                    <label for="mintcampus_comment">{{comment}}</label>
-                    <input id="mintcampus_comment" value="{{submission}}" type="text" placeholder="{{placeholder}}"/>
+                    <label for="mintcampus_comment">
+                        <img src="/theme/mint/pix/user_feedback.png" alt="user_edit">
+                    </label>
+                    <textarea id="mintcampus_comment" type="text" placeholder="{{placeholder}}" rows="4">{{submission}}</textarea>
                 </div>
             </div>
         </div>

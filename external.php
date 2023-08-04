@@ -390,8 +390,7 @@ class format_mintcampus_external extends external_api {
             $data['submission']='';
         }
 
-//        return ['ratingprompt' => $OUTPUT->render_from_template('format_mintcampus/rateprompt', $data)];
-        return ['ratingprompt' => $OUTPUT->render_from_template('theme_mint/mintcampus_rateprompt', $data)];
+        return ['ratingprompt' => $OUTPUT->render_from_template('format_mintcampus/rateprompt', $data)];
     }
 
     /**

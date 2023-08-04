@@ -25,6 +25,7 @@
 
 $string['topic'] = 'Section';
 $string['topic0'] = 'General';
+$string['module'] = 'Modul';
 
 $string['addsection'] = 'Modul hinzufügen';
 $string['hidefromothers'] = 'Modul verbergen'; // No longer used kept for legacy versions.

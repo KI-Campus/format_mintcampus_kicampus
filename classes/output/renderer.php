@@ -74,38 +74,6 @@ class renderer extends section_renderer {
         return $this->render(course_get_format($course)->inplace_editable_render_section_name($section, false));
     }
 
-    /**
-     * Generate the section title, that consists of one or two parts
-     * This function is required for theme_mint/mint_section template!
-     *
-     * @param \section_info $section The course_section entry from DB
-     * @param \stdClass $course The course entry from DB
-     * @return array title parts
-     */
-    public function complex_section_title($section, $course) {
-        $title = get_section_name($course, $section);
-        if (strpos($title, ":") !== false) {
-            $parts = explode(":", $title);
-        } else {
-            $parts = [$title];
-        }
-
-        $complextitle = [];
-        foreach ($parts as $index => $value) {
-            $mainpart = true;
-            if (count($parts) > 1) {
-                if ($index === 0) {
-                    $value = strtoupper($value);
-                    $mainpart = false;
-                }
-            }
-
-            $complextitle[] = (object) ['main' => $mainpart, 'value' => $value];
-        }
-
-        return $complextitle;
-    }
-
     protected function render_format_mintcampus_header(\format_mintcampus_header $testheader) {
         return \html_writer::tag('div', '',['id'=>'mintcampusactivityheader']);
     }
