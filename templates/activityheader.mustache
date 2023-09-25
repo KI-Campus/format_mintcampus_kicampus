@@ -68,11 +68,6 @@
 
 </style>
 <div class="container">
-    <div class="row">
-        <div id="mintcampuscourserating" data-id="{{courseid}}" class="col align-self-end" onclick="location.href='#';" style="cursor: pointer;display: flex;">
-            <div class="ratingtitle">{{#str}} ratecourse, format_mintcampus {{/str}}</div><div>{{{courserating}}}</div>
-        </div>
-    </div>
     <div class="row justify-content-between">
         <div class="col-sm-4">
             <div class="mintcampuscompletion">{{#str}} coursecompletionbar, format_mintcampus {{/str}}</div>
@@ -81,11 +76,6 @@
         <div class="col-sm-4">
             {{#sectioncompletionstate}}<div class="mintcampuscompletion">{{#str}} sectioncompletionbar, format_mintcampus {{/str}}</div>{{/sectioncompletionstate}}
             {{{sectioncompletionstate}}}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            {{{activitynavigation}}}
         </div>
     </div>
 </div>
