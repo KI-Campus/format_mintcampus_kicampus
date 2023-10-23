@@ -196,16 +196,19 @@
             <div class="container-fluid">
 
                 <div class="row justify-content-between">
-                    <div class="col-9">
+                    <div class="col-9" style="margin: auto;">
                         {{{scgraphic}}}
                     </div>
+                </div>
+				
+				<div class="row">
                     <div class="col-auto" id="mintcampuscourserating" data-id="{{courseid}}" onclick="location.href='#';"
-                         style="cursor: pointer;display: flex;">
+                         style="cursor: pointer; display: none;">
                         <div class="ratingtitle">{{#str}} ratecourse, format_mintcampus {{/str}}</div>
                         <div>{{{courserating}}}</div>
 
                     </div>
-                </div>
+				</div>
 
                 <div class="row">
                     {{^generatedimageuri}}
