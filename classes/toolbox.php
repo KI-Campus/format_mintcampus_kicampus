@@ -261,8 +261,8 @@ class toolbox {
      * @return array with the key => value of 'height' and 'width' for the container.
      */
     public function get_displayed_image_container_properties($settings) {
-        return array('height' => self::calculate_height(210, 1),
-            'width' => 210);
+        return array('height' => self::calculate_height(420, 1),
+            'width' => 420);
     }
 
     /**
@@ -335,6 +335,9 @@ class toolbox {
         if (empty($filepath) || empty($requestedwidth) || empty($requestedheight)) {
             return false;
         }
+
+        $requestedwidth = min(420, $requestedwidth);
+        $requestedheight = min(240, $requestedheight);
 
         global $CFG;
         require_once($CFG->libdir . '/gdlib.php');
