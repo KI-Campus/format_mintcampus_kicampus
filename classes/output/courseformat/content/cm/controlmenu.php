@@ -51,7 +51,7 @@ class controlmenu extends \core_courseformat\output\local\content\cm\controlmenu
     protected $format;
 
     /** @var section_info the section object */
-    private $section;
+    protected $section;
 
     /** @var action_menu the activity aciton menu */
     protected $menu;
