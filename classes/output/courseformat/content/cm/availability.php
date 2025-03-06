@@ -98,7 +98,7 @@ class availability extends \core_courseformat\output\local\content\cm\availabili
             $this->mod->availableinfo,
             $this->mod->get_course()
         );
-        $info[] = $this->availability_info($formattedinfo, 'isrestricted');
+        $info[] = $this->get_availability_data($output, $formattedinfo, 'isrestricted');
         return $info;
     }
 
@@ -141,7 +141,7 @@ class availability extends \core_courseformat\output\local\content\cm\availabili
             $fullinfo,
             $mod->get_course()
         );
-        $info[] = $this->availability_info($formattedinfo, $hidinfoclass);
+		$info[] = $this->get_availability_data($output, $formattedinfo, $hidinfoclass);
 
         return $info;
     }

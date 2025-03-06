@@ -78,7 +78,7 @@ class content extends content_base {
             'editing' => $editing,
         ];
 
-        $singlesection = $this->format->get_section_number();
+        $singlesection = $this->format->get_sectionnum();
         $sections = $this->export_sections($output);
         $initialsection = '';
         $course = $format->get_course();
@@ -635,7 +635,7 @@ class content extends content_base {
         $data = (object)[
             'num' => $section->section ?? '0',
             'id' => $section->id,
-            'sectionreturn' => $format->get_section_number(),
+            'sectionreturn' => $format->get_sectionnum(),
             'insertafter' => false,
             'summary' => $this->make_course_summary($course,250),
             'highlightedlabel' => $format->get_section_highlighted_name(),

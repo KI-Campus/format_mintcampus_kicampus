@@ -32,6 +32,7 @@ use core\output\named_templatable;
 use core_availability\info_module;
 use core_completion\cm_completion_details;
 use core_course\output\activity_information;
+use core_course\output\activity_completion;
 use core_courseformat\base as course_format;
 use core_courseformat\output\local\courseformat_named_templatable;
 use renderable;
@@ -191,9 +192,10 @@ class cm extends \core_courseformat\output\local\content\cm {
         // completion needs the manual completion button to be displayed on the course homepage.
         $showcompletioninfo = $completiondetails->has_completion() && ($showcompletionconditions ||
                 (!$completiondetails->is_automatic() && $completiondetails->show_manual_completion()));
+				
         if ($showcompletioninfo || !empty($activitydates)) {
-            $activityinfo = new activity_information($this->mod, $completiondetails, $activitydates);
-            $activityinfodata = $activityinfo->export_for_template($output);
+			$activitycompletion = new activity_completion($this->mod, $completiondetails);
+			$activityinfodata = $activitycompletion->export_for_template($output);
         }
 
         $data->activityinfo = $activityinfodata;
