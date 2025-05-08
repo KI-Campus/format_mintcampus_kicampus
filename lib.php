@@ -193,10 +193,7 @@ class format_mintcampus extends core_courseformat\base {
             if ($sectionno != 0 && $usercoursedisplay == COURSE_DISPLAY_MULTIPAGE) {
                 $url->param('section', $sectionno);
             } else {
-                if (empty($CFG->linkcoursesections) && !empty($options['navigation'])) {
-                    return null;
-                }
-                $url->set_anchor('section-'.$sectionno);
+                $url = new moodle_url('/course/view.php', ['id' => $course->id, 'section' => $sectionno]);
             }
         }
         return $url;
