@@ -85,8 +85,13 @@ class format_mintcampus_external extends external_api {
 
         $coursemodule = $DB->get_record('course_modules',['id'=>$cmid]);
         $courseid = $coursemodule->course;
-        $sectionnum = $DB->get_field('course_sections','section',['id'=>$coursemodule->section,'course'=>$courseid]);;
-
+        $sectionnum = $DB->get_field('course_sections','section',['id'=>$coursemodule->section,'course'=>$courseid]);
+        
+		// making sure the courseid has any valid value.
+        if($courseid === null) {
+            $courseid = 1;
+        }
+		
         $course = get_course($courseid);
         // Get a list of all the activities in the course.
         $modules = get_fast_modinfo($courseid)->get_cms();
